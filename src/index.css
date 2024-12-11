@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+/* //Import tailwind css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  font-family:'Oswald', sans-serif;
+}
+.heroSec:before{
+  content: '';
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    height: 100%;
+    background:linear-gradient(90deg, rgb(92 25 188) 0%, rgb(143 24 165) 35%, rgb(165 126 30) 100%);
+    transform: translate(-50%, -50%);
+    border-radius:80%;
+    bottom:0;
+    filter: blur(50px);
+    opacity: 0.5;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    transform: rotate(145deg);
+   
+}
+
+.btn-effect:hover:before{
+  transform: scale(1,1);
+}
+
+.featureSec{
+  transition: all 0.5s ease-out;
+}
+.featureSec:nth-child(1){
+  background:radial-gradient(#152355, #04091c, #030f3c );
+  z-index:1;
+}
+.featureSec:nth-child(2) {
+   background:linear-gradient(rgb(6 18 66), rgb(3 11 37 / 90%)), url(../images/global.png) no-repeat;
+   background-position:125% 165%;
+   transition: all 2s ease-out;
+}
+.featureSec:hover:nth-child(2){
+  background-position:110% 110%;
+}
+@layer base{
+  html{
+    @apply bg-black text-white 
+  }
+  a {
+    @apply no-underline;
+  }
+
+  img {
+    @apply block max-w-full;
+  }
+
+  button {
+    @apply bg-none tracking-[-0.03em];
+  }
+
+  input {
+    @apply tracking-[-0.03em];
+  }
+  
+}
+
+@layer utilities {
+  /* START of Typography */
+  .container {
+    @apply mx-auto max-w-[1252px] px-16 max-xl:px-10 max-lg:px-6 max-sm:px-4;
+  }
+  .border{
+    @apply border-gray-600
+  }
+  .bg-b3{
+    background:#04091c;
+  }
+  .nav-li{
+    @apply lg:border border-0 w-max md:border-gray-500 rounded-full capitalize px-4 md:py-2 sm:py-5 py-8  leading-4 cursor-pointer transition-all duration-700 lg:hover:border-black/100 md:h-10 h-14 hover:shadow-purple-600/50 hover:shadow-lg lg:hover:border-b-2 lg:hover:bg-blue-600   hover:text-blue-400
+  }
+  .h-num {
+    @apply  text-[72px] font-medium  leading-[84px];
+  }
+
+  .h1 {
+    @apply text-[84px] font-medium leading-[84px] tracking-[-0.03em];
+  }
+
+  .h2 {
+    @apply text-[64px] font-medium leading-[70px];
+  }
+
+  .h3 {
+    @apply text-[48px] font-medium leading-[56px] tracking-[-0.02em];
+  }
+
+  .h4 {
+    @apply text-[40px] font-medium leading-[52px];
+  }
+
+  .h5 {
+    @apply text-[32px] font-medium leading-[40px];
+  }
+
+  .h6 {
+    @apply text-[24px] font-medium leading-[36px];
+  }
+  .font-sam{
+    @apply text-[16px] font-medium leading-[20px]
+  }
+  .bg-background{
+    @apply absolute before:content-[''] before:w-full before:h-full before:bg-red-500 before:backdrop-blur-3xl z-10
+  }
+  .featureSec{
+    @apply after:content-[''] after:absolute after:w-[80px] after:h-[80px] after:bg-black after:-top-[2.5rem] after:-right-[2.5rem] after:rotate-45 after:z-10 after:rounded-sm after:border-0 after:border-b after:border-b-gray-500
+  }
+  .faq-line_after {
+    @apply after:absolute after:-top-3 after:left-[calc(50%-5px)] after:z-10 after:size-2.5 after:rounded-xl after:border-2 after:border-gray-700 after:bg-blue-500 after:content-[''];
+  }
+  .faq-glow_before {
+    @apply before:absolute before:left-[calc(50%-160px)] before:top-[-160px] before:size-[320px] before:bg-s4/25 before:mix-blend-soft-light before:blur-[200px] before:content-[''];
+  }
+  .serv-Bg{
+    @apply after:content-[''] after:absolute after:top-0 after:left-0 after:-z-10 after:bg-[url('/images/bgSec.png')] after:bg-cover after:bg-center after:size-full after:bg-blue-950/15  after:opacity-10 
+  }
+  .nav-active {
+    @apply text-blue-400;
+  }
+  .scroll-hide::-webkit-scrollbar {
+    display: none;
+  }
+   .faq-slideIcon{
+    @apply border-2 border-blue-400 before:absolute before:h-0.5 before:w-3 before:bg-blue-400 before:content-[''] after:absolute after:h-0.5 after:w-3 after:rotate-90 after:bg-blue-500 after:transition-all after:duration-500 after:content-['']
+   }
+
+    .footer-after{
+      @apply after:absolute after:-top-3 after:left-[calc(50%-5px)] after:z-10 after:size-2.5 after:rounded-xl after:border-2 after:border-gray-700 after:bg-[url('/images/bgSec.png')] after:content-[''];
+   }
+   .sizeBar{
+    @apply absolute left-0 w-full bg-black/100 lg:hidden h-screen top-20 transition-all duration-500
+   }
+   .priceBg{
+     @apply after:content-[''] after:absolute after:left-0 after:top-0 after:w-full after:bg-[url('./images/secBg.png')] after:bg-cover after:bg-center after:size-full after:-z-10 after:bg-blue-950/15  after:opacity-10
+   }
+   .priceBtn{
+    @apply relative z-20 h-16 flex-1 uppercase text-xl duration-500 hover:text-blue-400 text-gray-100
+   }
+   .priceBtn_before{
+    @apply  before:absolute before:top-0 before:left-0 before:right-9 before:bg-blue-600 before:w-full before:h-full before:content-[""] rounded-full;
+   }
+   .pricing-plan_first{
+    @apply first:rounded-bl-3xl first:rounded-tr-3xl  
+   }
+   .pricing-plan_last{
+    @apply last:rounded-bl-3xl last:rounded-tr-3xl
+   }
+   .pricing-plan_odd {
+    @apply odd:border border-gray-400 shadow-lg shadow-blue-950 odd:bg-gradient-to-r odd:from-[#0d1b4a] odd:to-[#540252] odd:my-8 
+   }
+   .pricing-plan_even{
+    @apply even:gap-5 even:rounded-bl-3xl even:rounded-br-3xl even:rounded-tr-3xl even:rounded-tl-3xl even:border-blue-800/80 even:bg-gradient-to-r even:from-[#34012c] even:to-[#131358] even:my-8 
+   }
+}
